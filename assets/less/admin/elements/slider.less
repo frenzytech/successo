@@ -1,0 +1,42 @@
+.instructivos-slider{
+    .slider-container{
+        width: 80%;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+        .slide:hover{
+            h2{
+                a{
+                    background-color: var(--color-green-successo);
+                    border-radius: 20px;
+                    padding: 5px;
+                }
+            }
+        }
+        h2{
+            a{
+                font-size: 14px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+    .slider-controls{
+
+        .prev,.next{
+            position:absolute;
+            top:0rem;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+        button{
+            background: transparent;
+        }
+    }
+}
