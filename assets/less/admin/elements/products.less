@@ -1,0 +1,152 @@
+.single-product{
+    background:#CAD9A8!important;
+    .ast-container{
+        max-width: 88vw;
+        .product{
+            .back{
+                color: var(--color-green-successo);
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 30px;
+                text-transform: uppercase;
+            }
+            .product-custom{
+                display: flex;
+                align-items: center;
+                .meta-product-custom{
+                    width: 33.33%;
+                    h1{
+                        font-size: 50px;
+                        color: #fff;
+                        font-weight: 500;
+                        line-height: 45px;
+                        margin-bottom: 4rem;
+                    }
+                    .product-ficha{
+                        padding: 1rem 4rem;
+                        background-color: var(--color-green-successo);
+                        color: var(--Blanco, #FFF);
+                        text-align: center;
+                        font-family: Montserrat;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 30px;
+                        border-radius: 30px 0 30px 30px;
+                        margin-bottom: 4rem;
+                    }
+                    .svg-five-stars{
+                        margin-top: 4rem;
+                        padding-top: 1rem;
+                        border-top: solid 1px #fff;
+                        display: flex;
+                        align-items: center;
+                        h4{
+                            color: var(--Blanco, #FFF);
+                            font-family: Montserrat;
+                            margin-right: 1rem;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 21px; /* 150% */
+                        }
+                    }
+                    .product-attributes{
+                        display: flex;
+                        margin-top: 2rem;
+                        padding-top: 1rem;
+                        border-top: solid 1px #fff;
+                        h4{
+                            color: var(--Blanco, #FFF);
+                            font-family: Montserrat;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 21px; /* 150% */                           
+                        }
+                        .att-title,.att-value{
+                            width: 50%;
+                        }
+                    }
+                }
+                .image-product-custom{
+                    width: 33.33%;
+                    img{
+                        display: block;
+                        margin: auto;
+                    }
+                }
+                .producto-content-custom{
+                    width: 33.33%;
+                    p{
+                        color: var(--Blanco, #FFF);
+                        font-family: Montserrat;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 21px; /* 131.25% */
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.products-slider{
+    position: relative;
+    .slider-container{
+        width: 80%;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        .current{
+            h2{
+                color: var(--color-green-successo)!important;
+                text-align: center;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+        }
+        .slide:hover{
+            h2{
+                a{
+                    border-radius: 20px;
+                    padding: 5px;
+                    color: var(--color-green-successo);
+                }
+            }
+        }
+        h2{
+            a{
+                font-size: 14px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+    .slider-controls{
+
+        .prev,.next{
+            position:absolute;
+            top:0rem;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+        button{
+            background: transparent;
+        }
+    }
+}

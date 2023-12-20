@@ -39,3 +39,4 @@ include_once("inc/wp-actions.php");
 include_once("inc/wp-filters.php");
 include_once('inc/wp-shortcodes.php');
 include_once('inc/wp-hubspot.php');
+include_once('inc/custom-shortcodes.php');
