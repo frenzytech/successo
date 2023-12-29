@@ -44,7 +44,14 @@ while ( have_posts() ) :
         <div class="product-custom">
             <div class="meta-product-custom">
                 <h1><?php the_title(); ?></h1>
-                <a href="" class="product-ficha">Descargar la ficha técnica</a>
+				<?php
+				// Obtener la URL del campo PDF
+				$pdf_attachment_id = get_post_meta(get_the_ID(), 'pdf', true);
+				$pdf_url = wp_get_attachment_url($pdf_attachment_id);
+				if (!empty($pdf_url)) {
+    				echo '<a href="' . esc_url(add_query_arg('product_id', get_the_ID(), '/ficha')) . '" class="product-ficha">Descargar la ficha técnica</a>';
+				}
+				?>
             	<div class="svg-five-stars">
 					<?php
 					$svg_path = '/inc/stars.svg';

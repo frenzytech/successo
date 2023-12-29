@@ -1,0 +1,111 @@
+.single-plan{
+    background:#CAD9A8!important;
+    .ast-container{
+        max-width: 88vw;
+        .back{
+            color: var(--color-green-successo);
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+        .plan-custom{
+            display: flex;
+            align-items: center;
+            .meta-plan-custom{
+                width: 33.33%;
+                .email{
+                    background-color: var(--color-green-successo);
+                    font-size: 20px;
+                    border-radius: 30px 0 30px 30px;
+                    display: block;
+                    padding: 1rem 3rem;
+                    color: #fff;
+                }
+                .email:hover{
+                    background: var(--color-green-bg-successo);
+                    color: #fff;
+                }
+                .email::placeholder{
+                    color: #fff;
+                }
+                h1{
+                    font-size: 50px;
+                    color: #fff;
+                    font-weight: 500;
+                    line-height: 45px;
+                    margin-bottom: 4rem;
+                }
+                .uno{
+                    color: var(--Blanco, #FFF);
+                    font-family: Montserrat;
+                    font-size: 35px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 45px; /* 128.571% */
+                }
+                .dos{
+                    color: var(--Blanco, #FFF);
+                    font-family: Montserrat;
+                    font-size: 35px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 45px;
+                    margin-bottom: 3rem;
+                }
+                .plan-ficha{
+                    padding: 1rem 4rem;
+                    background-color: var(--color-green-successo);
+                    color: var(--Blanco, #FFF);
+                    text-align: center;
+                    font-family: Montserrat;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 30px;
+                    border-radius: 30px 0 30px 30px;
+                    margin-bottom: 4rem;
+                }
+            }
+            .image-plan-custom{
+                width: 33.33%;
+                img{
+                    display: block;
+                    margin: auto;
+                }
+            }
+            .plan-content-custom{
+                width: 33.33%;
+                p{
+                    color: var(--Blanco, #FFF);
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 21px; /* 131.25% */
+                }
+            }
+        }
+    }
+}
+@media(max-width:767px){
+    .plan-custom{
+        flex-direction: column;
+        .meta-plan-custom,.image-plan-custom,.plan-content-custom{
+            width: 100%!important;
+        }
+        .meta-plan-custom{
+            h1{
+                text-align: center;
+                font-size: 40px!important;
+                margin-bottom: 2rem!important;
+            }
+            h2{
+                text-align: center;
+                font-size: 25px!important;
+            }
+        }
+    }
+}

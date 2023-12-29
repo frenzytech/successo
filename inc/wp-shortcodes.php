@@ -45,28 +45,37 @@ function instructivos_slider_shortcode($atts) {
 
                 function showSlide() {
                     slides.hide();
-                    slides.slice(currentIndex, currentIndex + 3).show();
+                    slides.slice(currentIndex, currentIndex + getSlidesToShow()).show();
 
                     // Oculta o muestra los botones según la posición actual
                     prevButton.toggle(currentIndex > 0);
-                    nextButton.toggle(currentIndex + 3 < totalSlides);
+                    nextButton.toggle(currentIndex + getSlidesToShow() < totalSlides);
+                }
+
+                function getSlidesToShow() {
+                    return window.innerWidth <= 767 ? 1 : 3;
                 }
 
                 $('.next').on('click', function () {
-                    if (currentIndex + 3 < totalSlides) {
-                        currentIndex += 3;
+                    if (currentIndex + getSlidesToShow() < totalSlides) {
+                        currentIndex++;
                         showSlide();
                     }
                 });
 
                 $('.prev').on('click', function () {
-                    if (currentIndex >= 3) {
-                        currentIndex -= 3;
+                    if (currentIndex > 0) {
+                        currentIndex--;
                         showSlide();
                     }
                 });
 
                 showSlide();
+
+                // Asegúrate de actualizar el número de slides al cambiar el tamaño de la pantalla
+                $(window).on('resize', function () {
+                    showSlide();
+                });
             });
         </script>
         <?php
@@ -77,6 +86,7 @@ function instructivos_slider_shortcode($atts) {
 }
 
 add_shortcode('instructivos_slider', 'instructivos_slider_shortcode');
+
 
 // Agrega el shortcode [lista_posts_type_post] al sistema
 function lista_posts_type_post_shortcode($atts) {
