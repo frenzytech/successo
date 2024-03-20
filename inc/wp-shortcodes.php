@@ -157,3 +157,65 @@ function lista_posts_type_post_shortcode($atts) {
 
 // Registra el shortcode
 add_shortcode('lista_posts_type_post', 'lista_posts_type_post_shortcode');
+
+
+function categories_list($atts){
+    ob_start();
+
+    $args = array(
+        'taxonomy' => 'product_cat',
+        'orderby' => 'name',
+        'order'   => 'ASC',
+        'hide_empty' => true, // Mostrar solo las categorías que tienen elementos
+    );
+
+    $product_categories = get_terms($args);
+
+    if (!empty($product_categories)) :
+        ?>
+            <?php
+            foreach ($product_categories as $category) :
+                // Obtener el primer producto de la categoría actual
+                $args = array(
+                    'post_type' => 'product',
+                    'posts_per_page' => 1,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'term_id',
+                            'terms' => $category->term_id,
+                        ),
+                    ),
+                    'orderby' => 'ID', // Ordenar por ID
+                    'order' => 'ASC', // Ordenar de forma ascendente
+                );
+                $products = new WP_Query($args);
+
+                if ($products->have_posts()) :
+                    $products->the_post();
+                    ?>
+                    <a class="category-element-list" href="<?php echo esc_url(get_permalink()); ?>" target="_blank"><?php echo $category->name ?></a>
+                    <?php
+                endif;
+                wp_reset_postdata();
+            endforeach;
+            ?>
+        <style>
+            a.category-element-list{
+            color: var(--e-global-color-astglobalcolor5);
+            font-family: "Montserrat", Sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-shadow:1px 3px 6px rgba(0,0,0,0.3);
+            text-align:left;
+            display:block;
+        }
+        </style>
+        <?php
+    else :
+        echo 'No hay categorías disponibles.';
+    endif;
+
+    return ob_get_clean();
+}
+add_shortcode('categories_list','categories_list');
